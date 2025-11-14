@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista expandible interactiva con múltiples funcionalidades">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista Expandida Mejorada de Daniel</title>
+</head>
+<body>
+    <div class="control-tema">
+        <button id="toggle-tema" class="tema-btn" aria-label="Cambiar tema">
+            <span class="tema-icon">🌙</span>
+        </button>
+    </div>
+
+    <main class="container">
+        <section class="lista" aria-labelledby="lista-titulo">
+            <h2 id="lista-titulo">Lista Expandible Interactiva</h2>
+            
+            <div class="controles">
+                <div class="buscador">
+                    <input type="text" id="buscador" placeholder="Buscar en la lista...">
+                    <span class="icono-busqueda">🔍</span>
+                </div>
+                <div class="filtros">
+                    <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" data-filtro="completados">Completados</button>
+                    <button class="filtro-btn" data-filtro="pendientes">Pendientes</button>
+                    <button class="filtro-btn" data-filtro="urgente">Urgente</button>
+                    <button class="filtro-btn" data-filtro="importante">Importante</button>
+                    <button class="filtro-btn" data-filtro="normal">Normal</button>
+                </div>
+            </div>
+
+            <button id="toggle-lista" class="toggle-btn" aria-expanded="true">
+                Contraer Lista
+            </button>
+
+            <button id="agregar-btn" class="agregar-btn">
+                + Agregar Elemento
+            </button>
+
+            <ul id="lista-elementos" role="list">
+                <!-- Los elementos se cargan dinámicamente -->
+            </ul>
+
+            <div class="estadisticas">
+                <div class="contador" data-tipo="total">
+                    <span class="numero" id="total-items">0</span>
+                    <span class="etiqueta">Total</span>
+                    <button class="btn-editar-estadistica" title="Editar estadística">✎</button>
+                </div>
+                <div class="contador" data-tipo="favoritos">
+                    <span class="numero" id="favoritos-count">0</span>
+                    <span class="etiqueta">Favoritos</span>
+                    <button class="btn-editar-estadistica" title="Editar estadística">✎</button>
+                </div>
+                <div class="contador" data-tipo="completados">
+                    <span class="numero" id="completados-count">0</span>
+                    <span class="etiqueta">Completados</span>
+                    <button class="btn-editar-estadistica" title="Editar estadística">✎</button>
+                </div>
+                <div class="contador" data-tipo="pendientes">
+                    <span class="numero" id="pendientes-count">0</span>
+                    <span class="etiqueta">Pendientes</span>
+                    <button class="btn-editar-estadistica" title="Editar estadística">✎</button>
+                </div>
+            </div>
+
+            <!-- Panel de control de estadísticas -->
+            <div class="panel-estadisticas">
+                <h3>Control de Estadísticas</h3>
+                <div class="controles-estadisticas">
+                    <button id="reset-estadisticas" class="btn-control">🔄 Reiniciar Estadísticas</button>
+                    <button id="auto-calcular" class="btn-control">🤖 Auto-Calcular</button>
+                    <button id="exportar-datos" class="btn-control">📊 Exportar Datos</button>
+                </div>
+                <div class="resumen-estadisticas">
+                    <h4>Resumen Detallado:</h4>
+                    <div id="resumen-detallado" class="resumen-detallado">
+                        <!-- Resumen se genera automáticamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>&copy; 2025 Daniel's Interactive List. Todos los derechos reservados.</p>
+</html>
